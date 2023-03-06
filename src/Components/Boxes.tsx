@@ -1,17 +1,19 @@
 import React from 'react'
+import BoxProps from '../Interfaces/boxInterface'
 
-interface BoxProps {
-    id : number,
-    on : boolean
-}
 
-const Boxes: React.FC<BoxProps> = ({id , on} : BoxProps ) =>{
+const Boxes: React.FC<BoxProps> = ({id , on, toggle} : BoxProps ) =>{
 
-    console.log(id , on)
-
-    return(
-        <div className='boxesDiv'>
-
+    const styles = {
+        backgroundColor: on ? "#222222" : "transparent"
+    }
+    
+    return (
+        <div 
+            style={styles} 
+            className="boxesDiv"
+            onClick={()=>toggle(id)}
+        >
         </div>
     )
 }

@@ -1,16 +1,27 @@
 import React, { FC , useState } from 'react';
-import Boxes from './Components/Boxes';
+
 import boxprop from './json/boxes';
+import BoxProps from './Interfaces/boxInterface';
+
+import Boxes from './Components/Boxes';
+
 import "./App.css"
 
 function App() {
 
   const [square, setSquare] = useState()
 
+  const toggle = ({id} : BoxProps) =>{
+    console.log("Clicked " + id)
+    return true
+  }
+
   const squares = boxprop.map(square => (
     <Boxes 
+      key={square.id}
       id={square.id}
       on={square.on}
+      toggle = {toggle}
     />
   ))
   return (
