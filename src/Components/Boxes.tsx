@@ -1,6 +1,13 @@
 import React from 'react'
 
-const Boxes : React.FC = () =>{
+interface BoxProps {
+    id : number,
+    on : boolean
+}
+
+const Boxes: React.FC<BoxProps> = ({id , on} : BoxProps ) =>{
+
+    console.log(id , on)
 
     return(
         <div className='boxesDiv'>
