@@ -1,13 +1,12 @@
 import React, { FC } from 'react';
 import { nanoid } from 'nanoid';
-import HeroText from './Components/HeroText';
-
+import Boxes from './Components/Boxes';
 function App() {
 
 
   return (
     <div className="App">
-      <HeroText />
+      <Boxes />
     </div>
   );
 }
